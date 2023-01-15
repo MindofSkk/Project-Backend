@@ -8,9 +8,9 @@ const signup = async (req, res) => {
     bcrypt.hash(pswd, 6, async function (err, hash) {
       try {
         // Store hash in your password DB.
-        if (err) {
-          return res.status(400).send("try again");
-        }
+        // if (err) {
+        //   return res.status(400).send("try again");
+        // }
         const user = new UserModel({ email, pswd: hash });
 
         const r = await user.save();
